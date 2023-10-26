@@ -44,7 +44,7 @@
 }
 
 .NFTCard_box_update_left{
-    background-color: var(--icons-color);
+    background-color:  rgb(30,80,255);
     padding: .5rem 1rem;
     color: var(--main-bg-color);
     border-radius: 2rem;

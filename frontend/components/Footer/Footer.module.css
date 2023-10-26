@@ -43,7 +43,7 @@
     justify-content: space-between;
     align-items: center;
     padding: 1.5rem 2rem;
-    background-color:  var(--icons-color);
+    background-color:   rgb(30,80,255);
     color: var(--shadow-dark-color);
     border-radius: 5rem;
     margin-top: 3rem;

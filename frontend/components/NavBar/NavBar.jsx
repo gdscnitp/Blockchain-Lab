@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react'
+import { useRouter } from 'next/router';
 import Image from 'next/image';
 import Link from 'next/link';
 //import icon
@@ -11,11 +12,18 @@ import {Button} from "../componentindex";
 import images from "../../img";
 
 const NavBar = () => {
+    const router = useRouter(); 
     //useState components
     const [discover, setDiscover] = useState(false);
     const [help, setHelp] = useState(false);
     const [profile, setProfile] = useState(false);
     const [openSideMenu, setOpenSideMenu] = useState(false);
+
+    function handleCreateButtonClick() {
+        // Navigate to the CreateNFT page when the button is clicked
+        router.push('/createNFT'); // Replace '/createNFT' with the actual path to your CreateNFT page.
+      }
+      
 
     const openMenu = (e) => {
         const btnText = e.target.innerText;
@@ -96,7 +104,7 @@ const NavBar = () => {
 
                     {/* create button section*/}
                     <div className={Style.navbar_container_right_button}>
-                    <Button btnName="Create"  />
+                      <Button btnName="Create" handleClick={handleCreateButtonClick}/>
                     </div>
 
                     {/*user profile*/}

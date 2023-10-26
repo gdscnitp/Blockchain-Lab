@@ -41,6 +41,7 @@ import nft_image_2 from "./nft-image-2.png";
 import nft_image_3 from "./nft-image-3.png";
 import musiceWave from "./musicwave.png";
 import update from "./update.png";
+import provider1 from "./provider-1.png";
 
 export default {
   collection,
@@ -86,4 +87,5 @@ export default {
   vimeo,
   youtube,
   zgcmq,
+  provider1,
 };

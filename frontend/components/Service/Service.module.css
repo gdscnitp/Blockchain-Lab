@@ -20,7 +20,7 @@
 .service_box_item_step span{
     padding: .5rem 1.5rem;
     border-radius: 5rem;
-    background-color:  var(--icons-color);
+    background-color:  rgb(30,80,255);
     color: var(--shadow-dark-color);
 }
 

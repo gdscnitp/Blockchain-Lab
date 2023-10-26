@@ -1,6 +1,6 @@
 
 .button {
-    background-color: var(--icons-color);
+    background-color:rgb(30,80,255);
     padding: 1rem 2rem;
     border: 1px solid var(--icons-color);
     border-radius: 2rem;
@@ -8,7 +8,7 @@
     color: var(--shadow-light-color);
     cursor: pointer;
     transition:  all .2s ease-in;
-    box-shadow: var(--box-shadow);
+    box-shadow: black;
 }
 
 .button:hover{
