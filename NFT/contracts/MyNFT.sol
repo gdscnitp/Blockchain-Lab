@@ -13,15 +13,33 @@ contract MyNFT is ERC721URIStorage , Ownable {
 
     Counters.Counter private _tokenIds;
 
+    // Define a struct to store NFT information
+    struct NFTWithRoyalties {
+        string tokenURI;
+        uint256 royaltiesPercentage;
+    }
+
+    // Mapping from token ID to NFT information.
+    mapping(uint256 => NFTWithRoyalties) private _nfts;
+
+
     constructor() ERC721("Code Eater", "CER") {}
 
-    function mintNFT(address recipient, string memory tokenURI) public onlyOwner returns (uint) {
+    function mintNFT(address recipient, string memory tokenURI, uint256 royaltiesPercentage) public onlyOwner returns (uint) {
         _tokenIds.increment();
 
         uint256 newItemId = _tokenIds.current();
         _mint(recipient, newItemId);
+
+         _nfts[newItemId] = NFTWithRoyalties(tokenURI, royaltiesPercentage);
+
         _setTokenURI(newItemId, tokenURI);
 
         return newItemId;
     }
+
+    // Function to get the royalties percentage for a specific NFT.
+    function getRoyaltiesPercentage(uint256 tokenId) public view returns (uint256) {
+        return _nfts[tokenId].royaltiesPercentage;
+    }
 }
