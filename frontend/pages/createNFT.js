@@ -131,6 +131,7 @@ function createNFT() {
           ) : (
             <></>
           )}
+             </div>
 
         
       </div>
