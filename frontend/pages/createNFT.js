@@ -3,6 +3,9 @@ import { NFTStorage, File } from "nft.storage";
 import { Buffer } from "buffer";
 import axios from "axios";
 
+// Components
+import Spinner from "react-bootstrap/Spinner";
+
 function createNFT() {
   const [provider, setProvider] = useState(null);
   const [account, setAccount] = useState(null);
@@ -12,6 +15,8 @@ function createNFT() {
   const [description, setDescription] = useState("");
   const [image, setImage] = useState(null);
   const [url, setURL] = useState(null);
+
+  const [isWaiting, setIsWaiting] = useState(false);
 
 
   // Function to handle form submission
@@ -111,9 +116,23 @@ function createNFT() {
         </form>{" "}
         {<br></br>}
         
-        <div className="image">
+        {/*  <div className="image">
           <img src={image} alt="AI generated image" />
-        </div>
+        </div>  */}
+
+         <div className="image">
+          {!isWaiting && image ? (
+            <img src={image} alt="AI generated image" />
+          ) : isWaiting ? (
+            <div className="image__placeholder">
+              <Spinner animation="border" />
+              <p>{message}</p>
+            </div>
+          ) : (
+            <></>
+          )}
+
+        
       </div>
       <p>
         View&nbsp;{" "}
